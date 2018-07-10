@@ -43,7 +43,11 @@
         <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 40px; padding: 0 40px;">
             <div>
                 <h1>Data</h1>
-                <textarea id="data"></textarea>
+                <textarea id="data">1
+2
+3
+4
+5</textarea>
             </div>
             <div>
                 <h1>Output</h1>
@@ -66,10 +70,13 @@
         <script src="react-dom.production.min.js" charset="utf-8"></script>
         -->
         <script type="text/javascript">
-            $('#data').on('keyup', function(evt) {
-                var data = $('#data').val();
-                $('#output').val(data.split('\n').join(','))
-            });
+            function output() {
+                var text = $('#data').val();
+                $('#output').val(text.split('\n').join(','));
+            }
+
+            $('#data').on('keyup', output)
+            output();
 
             $('textarea').height(window.innerHeight - $('textarea').position().top - 100)
         </script>
