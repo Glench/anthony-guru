@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+    <head>
+        <title></title>
+        <style type="text/css">
+            html, body {
+                margin: 0;
+                padding: 0;
+                font-size: 13px;
+                font-family: Helvetica, Arial, sans-serif;
+                line-height: 1;
+            }
+            table {
+                border-collapse: collapse;
+                border-spacing: none;
+            }
+            p {
+            }
+            textarea {
+                display: block;
+                width: 100%;
+                font-size: 14px;
+            }
+        </style>
+        <!-- <link href="" rel="stylesheet"> -->
+
+        <!--
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@glenchsite" />
+        <meta name="twitter:creator" content="@glench" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="http://glench.com/DeepListeningAtTheRecurseCenter/" />
+        <meta property="og:title" content="Deep Listening at the Recurse Center" />
+        <meta property="og:description" content="Helping programmers become more self-directed through meditative listening." />
+        <meta property="og:image" content="http://glench.com/DeepListeningAtTheRecurseCenter/icon.png" />
+        -->
+
+    </head>
+    <body>
+
+        <h1 style="padding-left: 40px;">Number converter</h1>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 40px; padding: 0 40px;">
+            <div>
+                <h1>Data</h1>
+                <textarea id="data"></textarea>
+            </div>
+            <div>
+                <h1>Output</h1>
+                <p>"1:5" functionality can be done on hiring :)</p>
+                <textarea id="output"></textarea>
+            </div>
+        </div>
+
+        <!-- development build -->
+        <script src="underscore.js"></script>
+        <!-- <script src="http://epeli.github.io/underscore.string/lib/underscore.string.js"></script> -->
+        <script src="jquery-3.3.1.js"></script>
+        <script src="react.development.js" charset="utf-8"></script>
+        <script src="react-dom.development.js" charset="utf-8"></script>
+        <script src="d3.v3.min.js" charset="utf-8"></script>
+        <!-- production build
+        <script src="underscore-min.js"></script>
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="react.production.min.js" charset="utf-8"></script>
+        <script src="react-dom.production.min.js" charset="utf-8"></script>
+        -->
+        <script type="text/javascript">
+            $('#data').on('keyup', function(evt) {
+                var data = $('#data').val();
+                $('#output').val(data.split('\n').join(','))
+            });
+
+            $('textarea').height(window.innerHeight - $('textarea').position().top - 100)
+        </script>
+    </body>
+</html>
